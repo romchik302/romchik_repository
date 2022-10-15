@@ -1,0 +1,40 @@
+using System;
+
+namespace romchik
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string gold;
+            int goldRemainder;
+            int price = 2;
+            string countCrystal;
+
+            Console.Write("Покупатель: У меня вот столько золота: ");
+            gold = Console.ReadLine();
+            int.TryParse(gold, out int inputGold);
+            
+
+            if(inputGold >= 1000)
+            {
+                Console.WriteLine("Продавец: Как ты блять столько золота в карман уместил еблан?");
+            }
+
+            Console.Write("Покупатель: Хочу кристаллов вот столько:");
+            countCrystal = Console.ReadLine();
+            
+            int.TryParse(countCrystal, out int inputCountCrystal);
+
+            if((price * inputCountCrystal) > inputGold)
+            {
+                Console.WriteLine("Продавец: Пошел нахуй математик хуев");
+            }
+            else
+            {
+                goldRemainder = inputGold - (price * inputCountCrystal);
+                Console.WriteLine($"Покупатель: Ура, теперь у меня есть {inputCountCrystal} кристаллов и еще осталось {goldRemainder} золота");
+            }
+        }
+    }
+}
