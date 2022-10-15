@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace __
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int images = 52;
+            int row = 3;
+            int rowCount = images / row;
+            int overCountImages = images % row;
+            System.Console.WriteLine(rowCount + " " + overCountImages);
+        }
+    }
+}
