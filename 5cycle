@@ -6,12 +6,12 @@ namespace romchik
     {
         static void Main(string[] args)
         {
-            int changeableTerm = 5;
-            int maxSum = 96;
+            int minNumber = 5;
+            int maxNumber = 97;
             
-            for(int unchangeableTerm = 0; unchangeableTerm < maxSum; unchangeableTerm += 7)
+            for(int i = 0; minNumber + i < maxNumber; i += 7)
             {
-                Console.Write(unchangeableTerm + changeableTerm + " ");
+                Console.Write(i + minNumber + " ");
             }
         }
     }
