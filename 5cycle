@@ -6,13 +6,14 @@ namespace romchik
     {
         static void Main(string[] args)
         {
-            int number = 7;
-            int multiplier = 1;
+            int term = 5;
+            int unChangeableMultiplier = 7;
+            int changeableMultiplier = 1;
+            int maxMultiplier = 13;
             
-            while(multiplier <= 14)
+            for(;changeableMultiplier <= maxMultiplier; changeableMultiplier++)
             {
-                Console.Write(number * multiplier + " ");
-                multiplier++;
+                Console.Write(unChangeableMultiplier * changeableMultiplier + term + " ");
             }
         }
     }
