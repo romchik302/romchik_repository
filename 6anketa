@@ -1,0 +1,46 @@
+using System;
+
+namespace romchik
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name;
+            string surname;
+            string age;
+            string zodiacSign;
+            string howAreYou;
+
+            Console.WriteLine("Привет, это анкета для друзей");
+            System.Threading.Thread.Sleep(100);
+
+            Console.WriteLine("Как тебя зовут?");
+            name = Console.ReadLine();
+
+            Console.WriteLine("Какая у тебя фамилия?");
+            surname = Console.ReadLine();
+
+            Console.WriteLine("Сколько тебе лет?");
+            age = Console.ReadLine();
+
+            Console.WriteLine("Кто ты по знаку зодиака");
+            zodiacSign = Console.ReadLine();
+
+            Console.WriteLine("Как у тебя дела?");
+            howAreYou = Console.ReadLine();
+
+            Console.WriteLine("Начало обработки данных");
+            System.Threading.Thread.Sleep(150);
+            for(int i = 0; i < 100; i++)
+            {
+                Console.WriteLine($"Обработка завершена на {i} Процентов");
+                System.Threading.Thread.Sleep(150);
+            }
+
+            System.Threading.Thread.Sleep(400);
+            Console.WriteLine($"Обработка завершена, программа пришла к выводу о том, что вас зовут {name} {surname}, вам {age} лет, вы {zodiacSign} по знаку зодиака и у вас {howAreYou} дела");
+
+        }
+    }
+}
