@@ -1,0 +1,19 @@
+using System;
+
+namespace romchik
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = 7;
+            int multiplier = 1;
+            
+            while(multiplier <= 14)
+            {
+                Console.Write(number * multiplier + " ");
+                multiplier++;
+            }
+        }
+    }
+}
