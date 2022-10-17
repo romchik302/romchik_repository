@@ -1,0 +1,22 @@
+using System;
+
+namespace romchik
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string message;
+            string exitWord = "exit";
+            string word = "";
+
+            Console.Write("Enter message: ");
+            message = Console.ReadLine();
+
+            while (word != exitWord){
+                Console.WriteLine(message);
+                word = Console.ReadLine();
+            }
+        }
+    }
+}
