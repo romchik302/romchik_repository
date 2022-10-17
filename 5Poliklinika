@@ -6,21 +6,22 @@ namespace romchik
     {
         static void Main(string[] args)
         {
-            int timePriyomaPerMinutes = 10;
+            int timePriyomaMinutes = 10;
+            int minutesInHours = 60;
             string grannyCount = " ";
             int inputGranny = 0;
             int minutesCount;
-            int waitingPerMinutes;
-            int waitingPerHours;
+            int waitingMinutes;
+            int waitingHours;
 
             Console.Write("Введите кол-во старушек: ");
             grannyCount = Console.ReadLine();
             int.TryParse(grannyCount, out inputGranny);
 
-            minutesCount = inputGranny * timePriyomaPerMinutes;
-            waitingPerHours = minutesCount / 60;
-            waitingPerMinutes = minutesCount % 60;
-            Console.WriteLine($"Вы должны отстоять в очереди {waitingPerHours} часов и {waitingPerMinutes} минут");
+            minutesCount = inputGranny * timePriyomaMinutes;
+            waitingHours = minutesCount / minutesInHours;
+            waitingMinutes = minutesCount % minutesInHours;
+            Console.WriteLine($"Вы должны отстоять в очереди {waitingHours} часов и {waitingMinutes} минут");
         }
     }
 }
