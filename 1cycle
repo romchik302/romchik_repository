@@ -1,0 +1,25 @@
+using System;
+
+namespace romchik
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string message;
+            string messageCount;
+
+            Console.Write("Enter message: ");
+            message = Console.ReadLine();
+
+            Console.Write("Enter message count: ");
+            messageCount = Console.ReadLine();
+            int.TryParse(messageCount, out int inputMessageCount);
+
+            for(int i = inputMessageCount; i > 0; i--)
+            {
+                Console.WriteLine(message);
+            }
+        }
+    }
+}
