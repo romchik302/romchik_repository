@@ -1,0 +1,117 @@
+using System;
+
+namespace romchik
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int coolNumber = 0;
+            double convertSum;
+
+            double rubleBalance = 100;
+            double dollarBalance = 100;
+            double liraBalance = 100;
+
+            double rubleCourse = rnd.Next(50, 70);
+            double liraCourse = rnd.Next(15, 25);
+
+            Console.WriteLine($"1 доллар стоит {rubleCourse} рублей или {liraCourse} лир");
+            do
+            {
+                Console.WriteLine($"У тебя на счету {rubleBalance} рублей, {dollarBalance} долларов и {liraBalance} лир.");
+                Console.WriteLine("Для конвертирования рублей нажми 1, долларов - 2, лиры - 3. Для выхода нажми любую другую цифру.");
+
+                coolNumber = Convert.ToInt32(Console.ReadKey().KeyChar.ToString());
+
+                if(coolNumber == 1)
+                {
+                    Console.WriteLine("Вы выбрали рубли. Если хотите конвертировать их в доллары - нажмите 1, для лир нажмите 2. Для выхода нажми любую другую цифру.");
+                    coolNumber = Convert.ToInt32(Console.ReadKey().KeyChar.ToString());
+                    if(coolNumber == 1)
+                    {
+                        Console.Write("Введите, сколько рублей вы хотите поменять: ");
+                        convertSum = Convert.ToInt32(Console.ReadLine());
+                        
+                        rubleBalance -= convertSum;
+                        convertSum = convertSum / rubleCourse;
+                        dollarBalance += convertSum;
+                    }
+                    else if(coolNumber == 2)
+                    {
+                        Console.Write("Введите, сколько рублей вы хотите поменять: ");
+                        convertSum = Convert.ToInt32(Console.ReadLine());
+
+                        rubleBalance -= convertSum;
+                        convertSum = convertSum / rubleCourse * liraCourse;
+                        liraBalance += convertSum;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                else if (coolNumber == 2)
+                {
+                    Console.WriteLine("Вы выбрали доллары. Если хотите конвертировать их в рубли - нажмите 1, для лир нажмите 2. Для выхода нажми любую другую цифру.");
+                    coolNumber = Convert.ToInt32(Console.ReadKey().KeyChar.ToString());
+                    if (coolNumber == 1)
+                    {
+                        Console.Write("Введите, сколько долларов вы хотите поменять: ");
+                        convertSum = Convert.ToInt32(Console.ReadLine());
+
+                        dollarBalance -= convertSum;
+                        convertSum = convertSum * rubleCourse;
+                        rubleBalance += convertSum;
+                    }
+                    else if (coolNumber == 2)
+                    {
+                        Console.Write("Введите, сколько долларов вы хотите поменять: ");
+                        convertSum = Convert.ToInt32(Console.ReadLine());
+
+                        dollarBalance -= convertSum;
+                        convertSum = convertSum * liraCourse;
+                        liraBalance += convertSum;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                else if (coolNumber == 3)
+                {
+                    Console.WriteLine("Вы выбрали лиры. Если хотите конвертировать их в рубли - нажмите 1, для долларов нажмите 2. Для выхода нажми любую другую цифру.");
+                    coolNumber = Convert.ToInt32(Console.ReadKey().KeyChar.ToString());
+                    if (coolNumber == 1)
+                    {
+                        Console.Write("Введите, сколько лир вы хотите поменять: ");
+                        convertSum = Convert.ToInt32(Console.ReadLine());
+
+                        liraBalance -= convertSum;
+                        convertSum = convertSum / liraCourse * rubleCourse;
+                        rubleBalance += convertSum;
+                    }
+                    else if (coolNumber == 2)
+                    {
+                        Console.Write("Введите, сколько лир вы хотите поменять: ");
+                        convertSum = Convert.ToInt32(Console.ReadLine());
+
+                        liraBalance -= convertSum;
+                        convertSum = convertSum / liraCourse;
+                        dollarBalance += convertSum;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+            while (true);
+        }
+    }
+}
