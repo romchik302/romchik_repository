@@ -1,0 +1,28 @@
+using System;
+using System.Collections;
+
+namespace romchik
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int num = rnd.Next(0, 100);
+            int sum = 0;
+            bool conformity;
+            
+            for(int i = 0; i <= num; i++)
+            {
+                conformity = (i % 3 == 0) || (i % 5 == 0);
+                if(conformity == true)
+                {
+                    sum += i;
+                }
+            }
+
+            Console.WriteLine(num);
+            Console.WriteLine(sum);
+        }
+    }
+}
